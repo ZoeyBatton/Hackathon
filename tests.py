@@ -14,7 +14,8 @@ def laptop_prices(most_expensive, least_expensive):
     print(f"The rounded price of the Razer Blade 15 is ${razer_price}")
     asus_price = round(asus_zephyrus_m16_price)
     print(f"The rounded price of the Asus Zephyrus is ${asus_price}")
-    average = (msi_rtxa5000_price + gigabyte_aero_price + razer_blade15_price + asus_zephyrus_m16_price) / 4
-    print(f"The average price of all computers is: ${average:.2f}")
+    plus = (msi_rtxa5000_price + gigabyte_aero_price + razer_blade15_price + asus_zephyrus_m16_price) / 4
+    # average = plus / 4
+    print(f"The average price of all computers is: ${plus:.2f}")
 
 laptop_prices(gigabyte_aero_price, asus_zephyrus_m16_price)
