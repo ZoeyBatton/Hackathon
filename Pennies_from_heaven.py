@@ -1,0 +1,1 @@
+pennies = float(input("How many pennies ")
