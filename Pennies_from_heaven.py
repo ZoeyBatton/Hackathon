@@ -1,20 +1,20 @@
 pennies = int(input("How many pennies do you have? "))
-print(f"You have {pennies} pennies, that is: ")
 
 import math 
 def how_many(pen):
     dollars = pen / 100
-    d_remainder = pen % 100
-    print("Dollar Bills =", math.trunc(dollars))
-    quarters = d_remainder / 25
-    q_remainder = d_remainder % 25
-    print("Quarters = ", math.trunc(quarters))
-    dimes = q_remainder / 10
-    dime_remainder = q_remainder % 10
-    print("Dimes = ", math.trunc(dimes))
-    nickels = dime_remainder / 5
-    n_remainder = dime_remainder % 5
-    print("Nickels =", math.trunc(nickels))
-    penny_s = n_remainder / 1
-    print("Pennies =", math.trunc(penny_s))
+    print("Dollars =", math.trunc(dollars))
+    if  pen % 100 >= 25:
+        quarters = pen % 100 / 25
+        print("Quarters = ", math.trunc(quarters))
+    if  pen % 100 % 25 >= 10:
+        dimes = pen % 100 % 25 / 10
+        print("Dimes = ", math.trunc(dimes))
+    if  pen % 100 % 25 % 10 >= 5:
+        nickels = pen % 100 % 25 % 10 / 5
+        print("Nickels =", math.trunc(nickels))
+    if  pen % 100 % 25 % 10 % 5 >= 1:
+        penny_s = pen % 100 % 25 % 10 % 5 / 1
+        print("Pennies =", math.trunc(penny_s))
+    
 how_many(pennies)
