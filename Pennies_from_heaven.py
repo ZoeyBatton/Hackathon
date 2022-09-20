@@ -2,8 +2,9 @@ pennies = int(input("How many pennies do you have? "))
 
 import math 
 def how_many(pen):
-    dollars = pen / 100
-    print("Dollars =", math.trunc(dollars))
+    if pen >= 100:
+        dollars = pen / 100
+        print("Dollars =", math.trunc(dollars))
     if  pen % 100 >= 25:
         quarters = pen % 100 / 25
         print("Quarters = ", math.trunc(quarters))
