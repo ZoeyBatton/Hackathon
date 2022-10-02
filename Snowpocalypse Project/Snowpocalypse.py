@@ -19,10 +19,10 @@ soup = BeautifulSoup(response.text, 'html.parser')
 soup2 = BeautifulSoup(response2.text, 'html.parser')
 
 day2 = soup2.find('h2', 'portlet-title')
-# weather2 = soup2.find('p', style_='font-size:20pt; padding-top:0px !important; margin-top:0px !important;')
+weather2 = soup2.find('p', style_='font-size:20pt; padding-top:0px !important; margin-top:0px !important;')
 weather2 = soup.select_one('p', style_ ='[style="font-size:20pt; padding-top:0px !important; margin-top:0px !important;"]')
-# print(day2.text)
-# print(weather2.text)
+print(day2.text)
+print(weather2.text)
 
 day = soup.find_all('h3', 'forecast-panel-title')
 weather = soup.find_all('p', 'forecast-panel-label')
@@ -47,12 +47,12 @@ def weathers():
         print("Yes")
         snow_list.append(new_list[3][0])
     
-    if len(snow_list) >= 1:
-        message = client.messages.create(
-        messaging_service_sid = 'MGdb54e56bf0ab026edbd4181ec8f08a0c',
-        body = f"It will be raining on {(' and '.join(str(x) for x in snow_list))}",
-        to = '+13303014724'
-        )
-        print(message.sid)
+    # if len(snow_list) >= 1:
+    #     message = client.messages.create(
+    #     messaging_service_sid = 'MGdb54e56bf0ab026edbd4181ec8f08a0c',
+    #     body = f"It will be raining on {(' and '.join(str(x) for x in snow_list))}",
+    #     to = '+13303014724'
+    #     )
+    #     print(message.sid)
             
 weathers()
