@@ -28,31 +28,33 @@ print(weather2.text)
 day = soup.find_all('h3', 'forecast-panel-title')
 weather = soup.find_all('p', 'forecast-panel-label')
 
-client = Client(account_sid, account_token)
+# search_for = ['Sunny']
 
+client = Client(account_sid, account_token)
+# search("Sunny", weather2.text)
 new_list = [[day[0].text, weather[0].text], [day[1].text, weather[1].text], [day[2].text, weather[2].text], [day[3].text, weather[3].text]]
 
 print(new_list)
 def weathers():
     snow_list = []
-    if search('Mostly Sunny', weather2.text):
+    if search("Sunny", weather2.text):
         print("Yes")
-        snow_list.append("Today")
+        snow_list.append("Tomorrow")
         print(snow_list)
-    if  new_list[0][1] == "Sunny":
+    if  search("Sunny", new_list[0][1]):
         print("Yes")
         snow_list.append(new_list[0][0])
-    if new_list[1][1] == "Sunny":
+    if search("Sunny", new_list[1][1]):
         print("Yes")  
         snow_list.append(new_list[1][0])
-    if new_list[2][1] == "Sunny":
+    if search("Sunny", new_list[2][1]):
         print("Yes")  
         snow_list.append(new_list[2][0])
-    if new_list[3][1] == "Sunny":
+    if search("Sunny", new_list[3][1]):
         print("Yes")
         snow_list.append(new_list[3][0])
 
-    print(snow_list)
+    # print(snow_list)
     
     # if len(snow_list) >= 1:
     #     message = client.messages.create(
