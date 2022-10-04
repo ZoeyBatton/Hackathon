@@ -3,7 +3,7 @@ from requests import get
 import os 
 from twilio.rest import Client
 from re import search
-
+# This code will not send messages, the Auth token needs to stay hidden
 os.system('cls')
 
 url = "https://www.localconditions.com/weather-mahoning-county-ohio/oh396/forecast.php"
